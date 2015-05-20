@@ -74,6 +74,6 @@ ttf_melt<- melt(train_test_final, id=c("subject", "activity"))
 # casting the data to obtain the average of each variable for each activity and each subject
 tidy_ds<- dcast(ttf_melt, subject + activity ~ variable, mean)
 
-# writing the tidy data set in a .csv format in order to save it and store it
-write.csv(tidy_ds, "tidy_dataset.csv")
+# writing the tidy data set in a .txt format in order to save it and store it
+write.table(tidy_ds, "tidy_dataset.txt", row.names=F)
 
